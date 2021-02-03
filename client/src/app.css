@@ -1,0 +1,9 @@
+main {
+  min-height: 75vh;
+  padding-top: 3em;
+  padding-bottom: 3em;
+}
+
+.product-card .product-price {
+  padding: 0.5rem 0;
+}

@@ -1,0 +1,19 @@
+{
+  "name": "mern-ecommerce-app",
+  "version": "1.0.0",
+  "description": "MERN Full Stack Ecommerce App",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yaser-alazem/mern-ecommerce-app.git"
+  },
+  "author": "Yaser AlAzm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yaser-alazem/mern-ecommerce-app/issues"
+  },
+  "homepage": "https://github.com/yaser-alazem/mern-ecommerce-app#readme"
+}
