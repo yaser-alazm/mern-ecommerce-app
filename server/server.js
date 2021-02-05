@@ -4,24 +4,23 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 import connectDB from './config/mongodb.js'
-import products from './data/products.js'
+import productRoutes from './routes/productRoutes.js'
+import {
+  errorHandler,
+  notFoundHandler,
+} from './middlewares/errorHandlingMiddleware.js'
 
 const app = express()
 
 connectDB()
 
-app.get('/', (req, res) => {
-  res.send('Hello From Node Server..')
-})
+app.use('/api/products', productRoutes)
 
-app.get('/api/products', (req, res) => {
-  res.json(products)
-})
+// Override 404 route not found error
+app.use(notFoundHandler)
 
-app.get('/api/product/:id', (req, res) => {
-  const product = products.find((p) => p._id === req.params.id)
-  res.json(product)
-})
+// Custom error handling
+app.use(errorHandler)
 
 const PORT = process.env.PORT || 8000
 
