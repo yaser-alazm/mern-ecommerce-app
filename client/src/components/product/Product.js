@@ -23,6 +23,13 @@ function Product({product}) {
           <Card.Text as='h3' className='product-price'>
             ${product.price}
           </Card.Text>
+          <Card.Text as='div'>
+            {product.countInStock > 0 ? (
+              <span className='text-success'>In Stock</span>
+            ) : (
+              <span className='text-danger'>Out Of Stock</span>
+            )}
+          </Card.Text>
         </Card.Body>
       </Card>
     </>
