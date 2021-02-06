@@ -9,59 +9,58 @@ In the project directory, you can run:
 Runs the app node server in the development mode.\
 On route [http://localhost:8000](http://localhost:8000) to view it in the browser.
 
-You will also see any lint errors in the console.
-
 ### `npm run client`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run the React app server on port (3000) on development mode.
 
-### `yarn build`
+### `npm run dev`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To run both Express & React servers at the same time.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### `npm run seed:data`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To run the seerder script and import dummy data to mongo database.
 
-### `yarn eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Starting with React app
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+##### Cleaning the default settings for the react app
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+##### Add git repo to the root directory
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+##### Setup bootstrap.css (react-bootstrap pckg)
 
-## Learn More
+##### Add basic components (Navbar-Footer-HomeScreen-ProductScreen)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+##### Implementing react router
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+##### Fetching products data from a dummy json file
 
-### Code Splitting
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Starting on Express
 
-### Analyzing the Bundle Size
+##### Add basic products & single product express routes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+##### Fetch data on React from express server (useEffect)
 
-### Making a Progressive Web App
+##### Setup ENV Variables on express and link express & react servers to work concurrently (using nodemon)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+### Starting on MongoDB
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+##### Connect to database & create Product - User - Order models
 
-### Deployment
+##### Create a seeder script to seed our dump data to the database (one time run script)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+##### Fetching the data from the database
 
-### `yarn build` fails to minify
+##### Create a custom Error Handling
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+### Starting on ReduxJs
+
+#####

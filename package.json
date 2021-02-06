@@ -8,7 +8,7 @@
     "server": "nodemon server/server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "data:import": "node server/seeder",
+    "seed:data": "node server/seeder",
     "data:destroy": "node server/seeder -d"
   },
   "repository": {
