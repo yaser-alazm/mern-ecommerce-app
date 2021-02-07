@@ -1,14 +1,21 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+
+// implementing redux
+import {Provider} from 'react-redux'
+import store from './redux/store'
+
+// adding bootstrap
 import './bootstrap.min.css'
 import './app.css'
+
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 )
 
