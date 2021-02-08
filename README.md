@@ -7,7 +7,7 @@ In the project directory, you can run:
 #### `npm run server`
 
 Runs the app node server in the development mode.\
-On route [http://localhost:8000](http://localhost:8000) to view it in the browser.
+On [localhost route](http://localhost:8000) to view it in the browser.
 
 #### `npm run client`
 
