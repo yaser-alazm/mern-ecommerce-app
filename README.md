@@ -4,69 +4,69 @@
 
 In the project directory, you can run:
 
-### `npm run server`
+#### `npm run server`
 
 Runs the app node server in the development mode.\
 On route [http://localhost:8000](http://localhost:8000) to view it in the browser.
 
-### `npm run client`
+#### `npm run client`
 
 To run the React app server on port (3000) on development mode.
 
-### `npm run dev`
+#### `npm run dev`
 
 To run both Express & React servers at the same time.
 
-### `npm run seed:data`
+#### `npm run seed:data`
 
 To run the seerder script and import dummy data to mongo database.
 
 ---
 
-### Starting with React app
+## Starting with React app
 
-##### Cleaning the default settings for the react app.
+- ##### Cleaning the default settings for the react app.
 
-##### Add git repo to the root directory.
+- ##### Add git repo to the root directory.
 
-##### Setup bootstrap.css (react-bootstrap pckg).
+- ##### Setup bootstrap.css (react-bootstrap pckg).
 
-##### Add basic components (Navbar-Footer-HomeScreen-ProductScreen).
+- ##### Add basic components (Navbar-Footer-HomeScreen-ProductScreen).
 
-##### Implementing react router.
+- ##### Implementing react router.
 
-##### Fetching products data from a dummy json file.
-
----
-
-### Starting on Express.
-
-##### Add basic products & single product express routes.
-
-##### Fetch data on React from express server (useEffect).
-
-##### Setup ENV Variables on express and link express & react servers to work concurrently (using nodemon).
+- ##### Fetching products data from a dummy json file.
 
 ---
 
-### Starting on MongoDB.
+## Starting on Express.
 
-##### Connect to database & create Product - User - Order models.
+- ##### Add basic products & single product express routes.
 
-##### Create a seeder script to seed our dump data to the database (one time run script).
+- ##### Fetch data on React from express server (useEffect).
 
-##### Fetching the data from the database.
-
-##### Create a custom Error Handling.
+- ##### Setup ENV Variables on express and link express & react servers to work concurrently (using nodemon).
 
 ---
 
-### Starting on ReduxJs
+## Starting on MongoDB.
 
-#### Setup Redux store with thunk middleware & Redux devtools chrome extension. Add the store as a provider to the app (in index.html).
+- ##### Connect to database & create Product - User - Order models.
 
-#### Create products reducer with it's constants and switch through them.
+- ##### Create a seeder script to seed our dump data to the database (one time run script).
 
-#### Create actions to fetch products & fetch single product and attach the payload to products and error state if there is any.
+- ##### Fetching the data from the database.
 
-#### Integrate fetch products and single product actions in products components and use useSelector to get the states from the redux store.
+- ##### Create a custom Error Handling.
+
+---
+
+## Starting on ReduxJs
+
+- #### Setup Redux store with thunk middleware & Redux devtools chrome extension. Add the store as a provider to the app (in index.html).
+
+- #### Create products reducer with it's constants and switch through them.
+
+- #### Create actions to fetch products & fetch single product and attach the payload to products and error state if there is any.
+
+- #### Integrate fetch products and single product actions in products components and use useSelector to get the states from the redux store.
