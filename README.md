@@ -63,10 +63,10 @@ To run the seerder script and import dummy data to mongo database.
 
 ## Starting on ReduxJs
 
-- #### Setup Redux store with thunk middleware & Redux devtools chrome extension. Add the store as a provider to the app (in index.html).
+- ##### Setup Redux store with thunk middleware & Redux devtools chrome extension. Add the store as a provider to the app (in index.html).
 
-- #### Create products reducer with it's constants and switch through them.
+- ##### Create products reducer with it's constants and switch through them.
 
-- #### Create actions to fetch products & fetch single product and attach the payload to products and error state if there is any.
+- ##### Create actions to fetch products & fetch single product and attach the payload to products and error state if there is any.
 
-- #### Integrate fetch products and single product actions in products components and use useSelector to get the states from the redux store.
+- ##### Integrate fetch products and single product actions in products components and use useSelector to get the states from the redux store.
