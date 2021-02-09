@@ -5,6 +5,7 @@ dotenv.config()
 
 import connectDB from './config/mongodb.js'
 import productRoutes from './routes/productRoutes.js'
+import userRoutes from './routes/userRoutes.js'
 import {
   errorHandler,
   notFoundHandler,
@@ -14,7 +15,11 @@ const app = express()
 
 connectDB()
 
+// accept JSON data in the request body
+app.use(express.json())
+
 app.use('/api/products', productRoutes)
+app.use('/api/users', userRoutes)
 
 // Override 404 route not found error
 app.use(notFoundHandler)

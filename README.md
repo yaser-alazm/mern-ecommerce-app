@@ -73,7 +73,7 @@ To run the seerder script and import dummy data to mongo database.
 
 ---
 
-### Setup cart functionality
+## Setup cart functionality
 
 ##### Create add to cart handler on (add to cart) button and move to the cart route with product id and quantity params.
 
@@ -86,3 +86,11 @@ To run the seerder script and import dummy data to mongo database.
 ##### Display cart items in the cart route, handle delete action for cart.
 
 ##### Add remove cart item reducer and action .
+
+---
+
+## Adding user authentication & authorization
+
+##### In the server, create user authenticate login route controller and return the user if email - pasword matches.
+
+##### Generate JWT token and set it to the user returned object after been authenticated.
