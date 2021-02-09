@@ -1,7 +1,24 @@
+h1 {
+  font-size: 1.8rem;
+  padding: 1rem 0;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 1.4rem;
+  padding: 0.5rem 0;
+  text-transform: uppercase;
+}
+
+header {
+  text-transform: uppercase;
+}
+
 main {
   min-height: 75vh;
   padding-top: 3em;
   padding-bottom: 3em;
+  text-transform: uppercase;
 }
 
 .product-card .product-price {

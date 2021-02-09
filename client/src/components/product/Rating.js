@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 function Rating({rating, numReviews, color}) {
   return (
-    <div className='rating'>
+    <div className='rating' style={{fontSize: '.7rem'}}>
       <span>
         <i
           style={{color}}

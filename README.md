@@ -70,3 +70,19 @@ To run the seerder script and import dummy data to mongo database.
 - ##### Create actions to fetch products & fetch single product and attach the payload to products and error state if there is any.
 
 - ##### Integrate fetch products and single product actions in products components and use useSelector to get the states from the redux store.
+
+---
+
+### Setup cart functionality
+
+##### Create add to cart handler on (add to cart) button and move to the cart route with product id and quantity params.
+
+##### Create add to cart reducer & action.
+
+##### Store the cart items inside local storage.
+
+##### Set the default carItems state to the local storage cartItems value.
+
+##### Display cart items in the cart route, handle delete action for cart.
+
+##### Add remove cart item reducer and action .
