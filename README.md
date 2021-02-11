@@ -75,26 +75,26 @@ To run the seerder script and import dummy data to mongo database.
 
 ## Setup cart functionality
 
-##### Create add to cart handler on (add to cart) button and move to the cart route with product id and quantity params.
+- ##### Create add to cart handler on (add to cart) button and move to the cart route with product id and quantity params.
 
-##### Create add to cart reducer & action.
+- ##### Create add to cart reducer & action.
 
-##### Store the cart items inside local storage.
+- ##### Store the cart items inside local storage.
 
-##### Set the default carItems state to the local storage cartItems value.
+- ##### Set the default carItems state to the local storage cartItems value.
 
-##### Display cart items in the cart route, handle delete action for cart.
+- ##### Display cart items in the cart route, handle delete action for cart.
 
-##### Add remove cart item reducer and action .
+- ##### Add remove cart item reducer and action .
 
 ---
 
 ## Adding user authentication & authorization
 
-##### In the server, create user authenticate login route controller and return the user if email - pasword matches.
+- ##### In the server, create user authenticate login route controller and return the user if email - pasword matches.
 
-##### Generate JWT token and set it to the user returned object after been authenticated.
+- ##### Generate JWT token and set it to the user returned object after been authenticated.
 
-##### Add auth middlware to set user data to the req object (req.user) and authorize users to access private routes (like get the user profile route)
+- ##### Add auth middlware to set user data to the req object (req.user) and authorize users to access private routes (like get the user profile route)
 
-##### Add register a new user controller and hash the password from the user model schema (pre save).
+- ##### Add register a new user controller and hash the password from the user model schema (pre save).
