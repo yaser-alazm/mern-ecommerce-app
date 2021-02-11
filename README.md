@@ -94,3 +94,7 @@ To run the seerder script and import dummy data to mongo database.
 ##### In the server, create user authenticate login route controller and return the user if email - pasword matches.
 
 ##### Generate JWT token and set it to the user returned object after been authenticated.
+
+##### Add auth middlware to set user data to the req object (req.user) and authorize users to access private routes (like get the user profile route)
+
+##### Add register a new user controller and hash the password from the user model schema (pre save).
