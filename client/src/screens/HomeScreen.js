@@ -7,6 +7,7 @@ import Product from '../components/product/Product'
 import Loading from '../components/utils/Loading'
 import Message from '../components/utils/Message'
 import {fetchProducts} from '../redux/actions/productActions'
+// import {loginUser} from '../redux/actions/userActions'
 
 function HomeScreen() {
   const dispatch = useDispatch()
@@ -15,6 +16,7 @@ function HomeScreen() {
 
   useEffect(() => {
     dispatch(fetchProducts())
+    // dispatch(loginUser('john@mernshop.com', '123456'))
   }, [dispatch])
 
   return (

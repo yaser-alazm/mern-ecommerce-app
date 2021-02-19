@@ -89,7 +89,7 @@ To run the seerder script and import dummy data to mongo database.
 
 ---
 
-## Adding user authentication & authorization
+## Adding user authentication & authorization (on back-end)
 
 - ##### In the server, create user authenticate login route controller and return the user if email - pasword matches.
 
@@ -98,3 +98,29 @@ To run the seerder script and import dummy data to mongo database.
 - ##### Add auth middlware to set user data to the req object (req.user) and authorize users to access private routes (like get the user profile route)
 
 - ##### Add register a new user controller and hash the password from the user model schema (pre save).
+
+- ##### Add protected endpoints to fetch a user profile and edit it.
+
+---
+
+## Adding user authentication & authorization (on front-end)
+
+- ##### Create user login reducer & action.
+
+- ##### Store the logged in user info inside local storage.
+
+- ##### Set the default user info state to the local storage user info value.
+
+- ##### Create the user login screen and set the login form to call the login end point and validate the user info and login.
+
+- ##### Add user logout action and use user state to toggle navbar ui login and logout status.
+
+- ##### Create the user register screen and set the register form to call the register end point and validate the user info.
+
+- ##### Login the user directly after register and set the initial value to the user registred info.
+
+- ##### Create (get user profile & update user profile) routes & conrollers(protected with token) on server.
+
+- ##### Create user profile (reducer & action) then create profile screen form and fetch the user profile (passing the user token for authorization).
+
+- ##### Add update profile action to profile screen, set the 'success' state to show succes message.
