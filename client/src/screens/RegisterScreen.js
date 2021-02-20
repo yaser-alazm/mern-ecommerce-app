@@ -6,9 +6,9 @@ import {Link} from 'react-router-dom'
 
 import FormContainer from '../components/utils/FormContainer'
 import Message from '../components/utils/Message'
+import Loading from '../components/utils/Loading'
 
 import {registerUser} from '../redux/actions/userActions'
-import Loading from '../components/utils/Loading'
 
 function RegisterScreen({location, history}) {
   const [name, setName] = useState('')

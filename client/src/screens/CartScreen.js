@@ -31,7 +31,7 @@ function CartScreen({match, location, history}) {
   }
 
   const checkoutHandler = () => {
-    history.push(`/products/checkout/`)
+    history.push(`/login?redirect=shipping`)
   }
   return (
     <Row>

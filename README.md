@@ -124,3 +124,16 @@ To run the seerder script and import dummy data to mongo database.
 - ##### Create user profile (reducer & action) then create profile screen form and fetch the user profile (passing the user token for authorization).
 
 - ##### Add update profile action to profile screen, set the 'success' state to show succes message.
+
+---
+
+## Starting checkout process
+
+- ##### Create checkout steps component with links for each step.
+- ##### Create shipping screen form component on the client.
+- ##### Create shipping address state (in cart reducer & save shipping address action) inside cart state, store it's values in the local storage and get it's default value from there.
+- ##### Create payment screen radio selector form component on the client (paypal is the default and only method for now).
+- ##### Create payment method state (in cart reducer & save payment method action) inside cart state, store it's values in the local storage and get it's default value from there.
+- ##### Create place order screen and add all the items info with tax - shipping - total price calculations.
+- ##### Create addNewOrder private endpoint (route - controller) on backend.
+- ##### Fire create order action from (place order btn in place order screen) and store the order in the database and redirect user to the order checkout finish screen.
