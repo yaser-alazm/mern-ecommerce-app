@@ -151,7 +151,7 @@ To run the seerder script and import dummy data to mongo database.
 - ##### Implement the pay action inside order screen and update the order info to with paymentResult and set the order status to true .
 - ##### Add users orders to user profile screen: \*\*\*
 
-- ###### Create orderListUser route and controller on the server.
-- ###### Create orderListUser Reducer and action.
-- ###### Add orderListUser action to profile screen and fetch user's orders.
-- ###### Integrate user's orders inside user's profile screen table.
+  - ###### Create orderListUser route and controller on the server.
+  - ###### Create orderListUser Reducer and action.
+  - ###### Add orderListUser action to profile screen and fetch user's orders.
+  - ###### Integrate user's orders inside user's profile screen table.
