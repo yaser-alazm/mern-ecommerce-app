@@ -17,7 +17,7 @@ function PlaceOrderScreen({history}) {
   const {error, success, order} = useSelector((state) => state.orderCreate)
 
   useEffect(() => {
-    success && history.push(`/order/${order._id}`)
+    success && history.push(`/orders/${order._id}`)
     // eslint-disable-next-line
   }, [success, history])
 
@@ -26,7 +26,7 @@ function PlaceOrderScreen({history}) {
     (acc, item) => acc + Number(item.price) * Number(item.qty),
     0
   )
-  const shippingPrice = itemsPrice < 80 ? 0 : 20
+  const shippingPrice = itemsPrice < 80 ? 0.0 : 20.0
 
   const taxPrice = itemsPrice * 0.11
   const totalPrice = itemsPrice + shippingPrice + taxPrice
@@ -35,13 +35,13 @@ function PlaceOrderScreen({history}) {
     e.preventDefault()
     dispatch(
       orderCreate({
-        orderItems: cartItems,
-        shippingAddress,
         paymentMethod,
-        itemsPrice,
-        taxPrice,
-        shippingPrice,
-        totalPrice,
+        orderItems: cartItems,
+        shippingAddress: shippingAddress,
+        itemsPrice: itemsPrice,
+        taxPrice: taxPrice.toFixed(2),
+        shippingPrice: shippingPrice.toFixed(2),
+        totalPrice: totalPrice.toFixed(2),
       })
     )
     // success && history.push('/finishorder')
@@ -137,7 +137,11 @@ function PlaceOrderScreen({history}) {
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
-                {error && <Message variant='danger'>{error}</Message>}
+                {error && (
+                  <Message variant='danger' text={error}>
+                    {error}
+                  </Message>
+                )}
               </ListGroup.Item>
               <ListGroup.Item>
                 <Button

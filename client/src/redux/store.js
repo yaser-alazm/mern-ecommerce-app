@@ -13,7 +13,12 @@ import {
   userProfileReducer,
   userUpdateProfileReducer,
 } from './reducers/userReducer'
-import {orderCreateReducer} from './reducers/orderReducers'
+import {
+  orderCreateReducer,
+  orderSingleReducer,
+  orderPayReducer,
+  orderListUserReducer,
+} from './reducers/orderReducers'
 
 const reducer = combineReducers({
   productsList: productListReducer,
@@ -24,6 +29,9 @@ const reducer = combineReducers({
   userProfile: userProfileReducer,
   userUpdateProfile: userUpdateProfileReducer,
   orderCreate: orderCreateReducer,
+  orderSingle: orderSingleReducer,
+  orderPay: orderPayReducer,
+  orderListUser: orderListUserReducer,
 })
 
 // set the cartItems state default value to the localStorage value

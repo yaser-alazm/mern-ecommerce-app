@@ -137,3 +137,21 @@ To run the seerder script and import dummy data to mongo database.
 - ##### Create place order screen and add all the items info with tax - shipping - total price calculations.
 - ##### Create addNewOrder private endpoint (route - controller) on backend.
 - ##### Fire create order action from (place order btn in place order screen) and store the order in the database and redirect user to the order checkout finish screen.
+
+---
+
+## Complete single order checkout process
+
+- ##### Create single order get by ID endpoint in the backend, create single order reducer & action on the frontend.
+- ##### Create single order screen and fetch the order info from redux action and use order info inside the screen.
+- ##### Create backend endpoint to update the order with payment information after the order been paid.
+- ##### Create orderPayment redux reducer & action to update the order and set the payment info to it after payment.
+- ##### Create PayPal developer sandbox app, get the app client id and fetch it using paypal route from our node server.
+- ##### Create Paypal SDK script dynamically and add it to the dom.
+- ##### Implement the pay action inside order screen and update the order info to with paymentResult and set the order status to true .
+- ##### Add users orders to user profile screen: \*\*\*
+
+- ###### Create orderListUser route and controller on the server.
+- ###### Create orderListUser Reducer and action.
+- ###### Add orderListUser action to profile screen and fetch user's orders.
+- ###### Integrate user's orders inside user's profile screen table.
