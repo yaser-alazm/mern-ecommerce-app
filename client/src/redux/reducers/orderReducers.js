@@ -12,6 +12,8 @@ import {
   ORDER_LIST_USER_INITIAL,
   ORDER_LIST_USER_SUCCESS,
   ORDER_LIST_USER_FAIL,
+  ORDER_LIST_USER_RESET,
+  ORDER_SINGLE_RESET,
 } from '../consts/orderConsts'
 
 export const orderCreateReducer = (state = {success: false}, action) => {
@@ -56,6 +58,8 @@ export const orderSingleReducer = (
         loading: false,
         error: action.payload,
       }
+    case ORDER_SINGLE_RESET:
+      return {order: {}}
     default:
       return state
   }
@@ -104,6 +108,8 @@ export const orderListUserReducer = (
         loading: false,
         error: action.payload,
       }
+    case ORDER_LIST_USER_RESET:
+      return {orders: []}
     default:
       return state
   }

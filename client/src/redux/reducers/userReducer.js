@@ -14,6 +14,9 @@ import {
   USER_UPDATE_PROFILE_SUCCESS,
   USER_UPDATE_PROFILE_FAIL,
   USER_UPDATE_PROFILE_RESET,
+  USER_LIST_INITIAL,
+  USER_LIST_SUCCESS,
+  USER_LIST_FAIL,
 } from '../consts/userConsts'
 
 export const userLoginReducer = (state = {}, action) => {
@@ -66,6 +69,19 @@ export const userUpdateProfileReducer = (state = {success: false}, action) => {
     case USER_UPDATE_PROFILE_SUCCESS:
       return {loading: false, success: true, userInfo: action.payload}
     case USER_UPDATE_PROFILE_FAIL:
+      return {loading: false, error: action.payload}
+    default:
+      return state
+  }
+}
+
+export const userListReducer = (state = {users: []}, action) => {
+  switch (action.type) {
+    case USER_LIST_INITIAL:
+      return {loading: true}
+    case USER_LIST_SUCCESS:
+      return {loading: false, users: action.payload}
+    case USER_LIST_FAIL:
       return {loading: false, error: action.payload}
     default:
       return state

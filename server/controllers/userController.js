@@ -108,4 +108,20 @@ const updateUserProfile = errorHandler(async (req, res) => {
   }
 })
 
-export {authUser, registerUser, getUserProfile, updateUserProfile}
+// @route       GET /api/users/
+// @desc        Get admin users
+// @privacy     Private - Only admins authorized
+
+const getUsers = errorHandler(async (req, res) => {
+  const users = await User.find({})
+
+  if (!users) {
+    res.status(404)
+    throw new Error('No users found!')
+  } else {
+    res.status(200)
+    res.json(users)
+  }
+})
+
+export {authUser, registerUser, getUserProfile, updateUserProfile, getUsers}

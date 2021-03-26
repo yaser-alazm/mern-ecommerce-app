@@ -15,7 +15,12 @@ import {
   USER_UPDATE_PROFILE_SUCCESS,
   USER_UPDATE_PROFILE_INITIAL,
   USER_UPDATE_PROFILE_FAIL,
+  USER_PROFILE_RESET,
+  USER_LIST_INITIAL,
+  USER_LIST_SUCCESS,
+  USER_LIST_FAIL,
 } from '../consts/userConsts'
+import {ORDER_LIST_USER_RESET} from '../consts/orderConsts'
 
 export const loginUser = (email, password) => async (dispatch) => {
   try {
@@ -57,6 +62,12 @@ export const logoutUser = (email, password) => async (dispatch) => {
     })
     dispatch({
       type: USER_REGISTER_LOGOUT,
+    })
+    dispatch({
+      type: USER_PROFILE_RESET,
+    })
+    dispatch({
+      type: ORDER_LIST_USER_RESET,
     })
   } catch (error) {
     dispatch({
@@ -159,6 +170,36 @@ export const updateUserProfile = (user) => async (dispatch, getState) => {
   } catch (error) {
     dispatch({
       type: USER_UPDATE_PROFILE_FAIL,
+      payload:
+        error.response && error.response.data.message
+          ? error.response.data.message
+          : error.message,
+    })
+  }
+}
+
+export const getUserList = () => async (dispatch, getState) => {
+  try {
+    dispatch({
+      type: USER_LIST_INITIAL,
+    })
+
+    const {userInfo} = getState().userLogin
+    // console.log(userInfo)
+    const config = {
+      headers: {
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    }
+    const {data} = await axios.get(`/api/users/`, config)
+
+    dispatch({
+      type: USER_LIST_SUCCESS,
+      payload: data,
+    })
+  } catch (error) {
+    dispatch({
+      type: USER_LIST_FAIL,
       payload:
         error.response && error.response.data.message
           ? error.response.data.message

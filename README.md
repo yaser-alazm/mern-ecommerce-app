@@ -149,9 +149,15 @@ To run the seerder script and import dummy data to mongo database.
 - ##### Create PayPal developer sandbox app, get the app client id and fetch it using paypal route from our node server.
 - ##### Create Paypal SDK script dynamically and add it to the dom.
 - ##### Implement the pay action inside order screen and update the order info to with paymentResult and set the order status to true .
-- ##### Add users orders to user profile screen: \*\*\*
+- ##### Add users orders to user profile screen:
 
   - ###### Create orderListUser route and controller on the server.
   - ###### Create orderListUser Reducer and action.
   - ###### Add orderListUser action to profile screen and fetch user's orders.
   - ###### Integrate user's orders inside user's profile screen table.
+
+---
+
+## Start with admin dashboard
+
+- ##### Create protected route to get all users (only for admins requests through adminsOnlyAuthorized middleware).
