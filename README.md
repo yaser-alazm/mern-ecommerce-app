@@ -161,3 +161,4 @@ To run the seerder script and import dummy data to mongo database.
 ## Start with admin dashboard
 
 - ##### Create protected route to get all users (only for admins requests through adminsOnlyAuthorized middleware).
+- ##### Create users list screen and add it to the admin dropdown menu in the navbar.

@@ -9,7 +9,7 @@ import Loading from '../components/utils/Loading'
 
 import {getUserList} from '../redux/actions/userActions'
 
-function UserList() {
+function UserListScreen() {
   const dispatch = useDispatch()
 
   const {users, error, loading} = useSelector((state) => state.userList)
@@ -17,6 +17,11 @@ function UserList() {
   useEffect(() => {
     dispatch(getUserList())
   }, [dispatch])
+
+  const onDeleteHandler = (e) => {
+    e.preventDefault()
+    console.log('Delete User')
+  }
 
   return (
     <>
@@ -49,18 +54,29 @@ function UserList() {
               <tr key={user._id}>
                 <td>{user._id}</td>
                 <td>{user.name}</td>
-                <td>{user.email}</td>
+                <td>
+                  <a href={`mailto:${user.email}`}>{user.email}</a>
+                </td>
                 <td>
                   {user.isAdmin ? (
-                    <i className='fas fa-check' style={{color: 'green'}}></i>
+                    <i className='fas fa-check' style={{color: '#18bc9c'}}></i>
                   ) : (
                     <i className='fas fa-times' style={{color: 'red'}}></i>
                   )}
                 </td>
                 <td>
-                  <LinkContainer to={`/profile/${user._id}/edit`}>
-                    <Button>Edit User</Button>
+                  <LinkContainer
+                    to={`/user/${user._id}/edit`}
+                    style={{marginRight: '.5rem'}}
+                  >
+                    <Button variant='light'>
+                      <i className='fas fa-edit' style={{color: '#18bc9c'}}></i>
+                    </Button>
                   </LinkContainer>
+
+                  <Button variant='light' onClick={onDeleteHandler}>
+                    <i className='fas fa-trash' style={{color: 'red'}}></i>
+                  </Button>
                 </td>
               </tr>
             ))}
@@ -71,4 +87,4 @@ function UserList() {
   )
 }
 
-export default UserList
+export default UserListScreen
