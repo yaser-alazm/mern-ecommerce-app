@@ -9,14 +9,19 @@ import Loading from '../components/utils/Loading'
 
 import {getUserList} from '../redux/actions/userActions'
 
-function UserListScreen() {
+function UserListScreen({history}) {
   const dispatch = useDispatch()
 
   const {users, error, loading} = useSelector((state) => state.userList)
+  const {userInfo} = useSelector((state) => state.userLogin)
 
   useEffect(() => {
-    dispatch(getUserList())
-  }, [dispatch])
+    if (userInfo && userInfo.isAdmin) {
+      dispatch(getUserList())
+    } else {
+      history.push('/login')
+    }
+  }, [dispatch, history, userInfo])
 
   const onDeleteHandler = (e) => {
     e.preventDefault()

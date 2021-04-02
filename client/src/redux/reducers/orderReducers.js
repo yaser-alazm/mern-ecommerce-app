@@ -109,7 +109,7 @@ export const orderListUserReducer = (
         error: action.payload,
       }
     case ORDER_LIST_USER_RESET:
-      return {orders: []}
+      return {}
     default:
       return state
   }

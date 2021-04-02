@@ -19,6 +19,7 @@ import {
   USER_LIST_INITIAL,
   USER_LIST_SUCCESS,
   USER_LIST_FAIL,
+  USER_LIST_RESET,
 } from '../consts/userConsts'
 import {ORDER_LIST_USER_RESET} from '../consts/orderConsts'
 
@@ -65,6 +66,9 @@ export const logoutUser = (email, password) => async (dispatch) => {
     })
     dispatch({
       type: USER_PROFILE_RESET,
+    })
+    dispatch({
+      type: USER_LIST_RESET,
     })
     dispatch({
       type: ORDER_LIST_USER_RESET,

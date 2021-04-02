@@ -9,6 +9,7 @@ import {
   USER_REGISTER_LOGOUT,
   USER_PROFILE_INITIAL,
   USER_PROFILE_SUCCESS,
+  USER_PROFILE_RESET,
   USER_PROFILE_FAIL,
   USER_UPDATE_PROFILE_INITIAL,
   USER_UPDATE_PROFILE_SUCCESS,
@@ -17,7 +18,7 @@ import {
   USER_LIST_INITIAL,
   USER_LIST_SUCCESS,
   USER_LIST_FAIL,
-  USER_PROFILE_RESET,
+  USER_LIST_RESET,
 } from '../consts/userConsts'
 
 export const userLoginReducer = (state = {}, action) => {
@@ -58,8 +59,8 @@ export const userProfileReducer = (state = {user: {}}, action) => {
       return {loading: false, user: action.payload}
     case USER_PROFILE_FAIL:
       return {loading: false, error: action.payload}
-    // case USER_PROFILE_RESET:
-    //   return {user: {}}
+    case USER_PROFILE_RESET:
+      return {}
     default:
       return state
   }
@@ -73,6 +74,8 @@ export const userUpdateProfileReducer = (state = {success: false}, action) => {
       return {loading: false, success: true, userInfo: action.payload}
     case USER_UPDATE_PROFILE_FAIL:
       return {loading: false, error: action.payload}
+    case USER_UPDATE_PROFILE_RESET:
+      return {}
     default:
       return state
   }
@@ -86,6 +89,8 @@ export const userListReducer = (state = {users: []}, action) => {
       return {loading: false, users: action.payload}
     case USER_LIST_FAIL:
       return {loading: false, error: action.payload}
+    case USER_LIST_RESET:
+      return {users: []}
     default:
       return state
   }
