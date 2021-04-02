@@ -7,6 +7,7 @@ import {
   getUserProfile,
   updateUserProfile,
   getUsers,
+  deleteUser,
 } from '../controllers/userController.js'
 import {
   userAuthorized,
@@ -18,6 +19,9 @@ router
   .route('/')
   .post(registerUser)
   .get(userAuthorized, adminsOnlyAuthorized, getUsers)
+
+router.route('/:id').delete(userAuthorized, adminsOnlyAuthorized, deleteUser)
+
 router
   .route('/profile')
   .get(userAuthorized, getUserProfile)

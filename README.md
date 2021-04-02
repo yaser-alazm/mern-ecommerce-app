@@ -163,3 +163,6 @@ To run the seerder script and import dummy data to mongo database.
 - ##### Create protected route to get all users (only for admins requests through adminsOnlyAuthorized middleware).
 - ##### Create users list screen and add it to the admin dropdown menu in the navbar.
 - ##### Add security redirects and logout user resets functionality to the user reducers & logout action.
+- ##### Implement delete user functionality:
+
+  - ###### Create delete user controller and protected route (only admin) in the backend.
