@@ -141,6 +141,47 @@ const deleteUser = errorHandler(async (req, res) => {
   }
 })
 
+// @route       GET /api/users/:id
+// @desc        Get user by ID
+// @privacy     Private/Admin - Only admins authorized
+
+const getUserById = errorHandler(async (req, res) => {
+  const user = await User.find(req.params.id)
+
+  if (!user) {
+    res.status(404)
+    throw new Error('No users found!')
+  } else {
+    res.status(200)
+    res.json(user)
+  }
+})
+
+// @route       PUT /api/users/:id
+// @desc        Update user
+// @privacy     Private/Admin - Only admins authorized
+
+const updateUser = errorHandler(async (req, res) => {
+  const user = await User.findById(req.params.id)
+
+  if (user) {
+    user.name = req.body.name || user.name
+    user.email = req.body.email || user.email
+    user.isAdmin = req.body.isAdmin
+
+    const updatedUser = await user.save()
+    res.json({
+      _id: updatedUser._id,
+      name: updatedUser.name,
+      email: updatedUser.email,
+      isAdmin: updatedUser.isAdmin,
+    })
+  } else {
+    res.status(404)
+    throw new Error('User not found!')
+  }
+})
+
 export {
   authUser,
   registerUser,
@@ -148,4 +189,6 @@ export {
   updateUserProfile,
   getUsers,
   deleteUser,
+  getUserById,
+  updateUser,
 }

@@ -8,6 +8,8 @@ import {
   updateUserProfile,
   getUsers,
   deleteUser,
+  getUserById,
+  updateUser,
 } from '../controllers/userController.js'
 import {
   userAuthorized,
@@ -20,7 +22,11 @@ router
   .post(registerUser)
   .get(userAuthorized, adminsOnlyAuthorized, getUsers)
 
-router.route('/:id').delete(userAuthorized, adminsOnlyAuthorized, deleteUser)
+router
+  .route('/:id')
+  .delete(userAuthorized, adminsOnlyAuthorized, deleteUser)
+  .get(userAuthorized, adminsOnlyAuthorized, getUserById)
+  .put(userAuthorized, adminsOnlyAuthorized, updateUser)
 
 router
   .route('/profile')
